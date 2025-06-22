@@ -1,0 +1,762 @@
+/* =================== GERAL =================== */
+* {
+    font-family: 'Raleway', sans-serif !important;
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#09205a77, #fffbe688), url('../img/fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    padding-top: 70px;
+}
+
+section, .section {
+    scroll-margin-top: 70px;
+}
+
+.bg-overlay {
+    background: #000;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+.hidden { display: none !important; }
+
+/* =================== NAVBAR =================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #09205a !important;
+}
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    gap: 0;
+}
+.navbar-social {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 0;
+}
+.navbar-social a {
+    color: #c79c2c;
+    font-size: 1.3rem;
+    transition: color 0.2s;
+}
+.navbar-social a:hover {
+    color: #91ab3f;
+}
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    gap: 0;
+    flex: 1 1 auto;
+}
+.navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+}
+.navbar-nav .nav-link {
+    display: block;
+    color: #c79c2c;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 1rem;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+.navbar-nav .nav-link:hover {
+    color: #91ab3f;
+}
+/* Dropdown do menu Serviços Ofertados */
+.navbar .dropdown-menu {
+    left: 0;
+    right: auto;
+    top: 100%;
+    margin-top: 0.5rem;
+    position: absolute;
+    min-width: 220px;
+    background: #c79c2c;
+    border-radius: 8px;
+    border: 1px solid #09205a;
+    z-index: 1050;
+    display: none;
+}
+.navbar .dropdown-item {
+    color:  #09205a;
+    font-weight: bold;
+    transition: background 0.2s, color 0.2s;
+}
+.navbar .dropdown-item:hover {
+    background:  #7a9634;
+    color: #fff;
+}
+
+/* =================== LOGO =================== */
+.menu-logo {
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s;
+    margin-left: 0;
+    margin-right: 0;
+}
+.menu-logo:hover { transform: scale(1.1); }
+
+/* =================== CONTAINERS =================== */
+.container {
+    background: transparent;
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    opacity: 0.9;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+/* =================== PADRÃO PARA CONTAINERS DAS SEÇÕES =================== */
+.main-section-container,
+.home-container,
+.servico-card-container,
+#orcamento,
+#faqs,
+#sobre-nos.content-section,
+#sac.content-section {
+    max-width: 1200px;
+    margin: -5px auto 0 auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+    padding: 12px 18px 8px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+    opacity: 1;
+    margin-bottom: 8px !important;
+}
+#faqs {
+    border-radius: 10px;
+}
+#faqs .faq-cards-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0 2px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    justify-items: center;
+    align-items: stretch;
+    opacity: 1;
+}
+@media (max-width: 900px) {
+    #faqs .faq-cards-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 4px;
+    }
+    #faqs .faq-card {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 1200px) {
+    #faqs, #faqs .faq-cards-container {
+        max-width: 99vw;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    #faqs .faq-card {
+        max-width: 98vw;
+        min-width: 0;
+    }
+}
+@media (max-width: 800px) {
+    #faqs .faq-cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        padding: 0 4px;
+    }
+    #faqs .faq-card {
+        max-width: 100vw;
+        min-width: 0;
+    }
+}
+
+/* =================== TÍTULOS E LISTAS =================== */
+h1, h2 { color: #006699; }
+.content-section h2,
+#sobre-nos h2,
+#faqs h2,
+#orcamento h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: #09205a;
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+.content-section p {
+    font-size: 1.1rem;
+    color: #09205a;
+    margin-bottom: 10px;
+}
+.h1.text-center.mb-4 {
+    font-size: 2.5rem;
+    color: #09205a;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style: disc;
+    font-size: 1.1rem;
+}
+
+/* =================== RODAPÉ =================== */
+footer {
+    background: rgba(0,0,0,0.719);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #fff;
+    position: relative;
+    z-index: 10;
+}
+footer .container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: rgb(197,238,13);
+    font-weight: bold;
+}
+
+/* =================== CARDS E GRIDS =================== */
+.card {
+    width: 100%;
+    max-width: 500px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: rgba(146,39,39,0.192);
+    font-weight: bold;
+}
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #000;
+    text-align: center;
+}
+.card-text {
+    font-size: 1rem;
+    color: #0f0f0f;
+    line-height: 1.6;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+    padding-left: 0;
+}
+.card-text li {
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+/* =================== MODAIS =================== */
+.modal-header, .modal-body, .modal-footer {
+    background: #43d84377;
+    border: 2px solid #1eb70a;
+    border-radius: 12px;
+    padding: 24px 24px;
+    margin-top: 0px;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.10);
+    width: 100%;
+    transition: box-shadow 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+.modal-dialog {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 700px;
+}
+#cotacaoModal .modal-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+#cotacaoModal .modal-body {
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-top: 0 !important;
+    border-radius: 0 !important;
+}
+
+/* =================== MODAIS DETALHES DO SERVIÇO =================== */
+#detalhesdoserviçoModal .modal-content,
+#detalhesdoserviçoModal2 .modal-content,
+#detalhesdoserviçoModal3 .modal-content,
+#detalhesdoserviçoModal4 .modal-content {
+    background: #fff !important;
+    border: 2px solid #1eb70a !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.10) !important;
+    padding: 0 !important;
+}
+
+#detalhesdoserviçoModal .modal-header,
+#detalhesdoserviçoModal .modal-body,
+#detalhesdoserviçoModal .modal-footer,
+#detalhesdoserviçoModal2 .modal-header,
+#detalhesdoserviçoModal2 .modal-body,
+#detalhesdoserviçoModal2 .modal-footer,
+#detalhesdoserviçoModal3 .modal-header,
+#detalhesdoserviçoModal3 .modal-body,
+#detalhesdoserviçoModal3 .modal-footer,
+#detalhesdoserviçoModal4 .modal-header,
+#detalhesdoserviçoModal4 .modal-body,
+#detalhesdoserviçoModal4 .modal-footer {
+    background: #fff !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 24px 24px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+    color: #09205a !important;
+}
+
+#detalhesdoserviçoModal .modal-title,
+#detalhesdoserviçoModal2 .modal-title,
+#detalhesdoserviçoModal3 .modal-title,
+#detalhesdoserviçoModal4 .modal-title {
+    margin-bottom: 0 !important;
+    color: #1eb70a !important;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    margin-bottom: 0px;
+}
+#detalhesdoserviçoModal .modal-body,
+#detalhesdoserviçoModal2 .modal-body,
+#detalhesdoserviçoModal3 .modal-body,
+#detalhesdoserviçoModal4 .modal-body {
+    padding-top: 0 !important;
+}
+
+#detalhesdoserviçoModal .modal-body > *:first-child,
+#detalhesdoserviçoModal2 .modal-body > *:first-child,
+#detalhesdoserviçoModal3 .modal-body > *:first-child,
+#detalhesdoserviçoModal4 .modal-body > *:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* =================== CARROSSEL =================== */
+#carouselHomeImages {
+    max-width: 700px;
+    width: 98%;
+    margin: 24px auto 0 auto;
+    padding: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    opacity: 0.95;
+    top: -30px;
+}
+#carouselHomeImages .carousel-inner img {
+    width: 90%;
+    height: auto;
+    object-fit: contain;
+    max-height: 90vh;
+    border-radius: 10px;
+    padding: 0;
+}
+
+/* =================== SERVIÇOS =================== */
+#servicos {
+    padding: 12px 18px 8px 18px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.7);
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    top: -40px;
+    background: #fff;
+    border-radius: 10px;
+    opacity: 1;
+}
+#servicos > .container {
+    padding-top: 10px !important;
+}
+#servicos h1.text-center.mb-4 {
+    margin-top: 0.1em;
+    margin-bottom: 0.7em;
+}
+#servicos p.text-center {
+    margin-top: 0;
+    margin-bottom: 1.2em;
+}
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.modal {
+    overflow-y: auto;
+}
+
+/* Dropdown abre ao passar o mouse */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .navbar .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+/* =================== FORMULÁRIOS =================== */
+#form-mercado,
+#form-fotovoltaico,
+#form-baterias,
+#simulador-independente-form,
+#orcamento-form,
+#form-cotacao {
+    background: #e6ffe6;
+    border: 2px solid #1eb70a;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.10);
+    transition: box-shadow 0.3s;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 20px 24px;
+    color: #09205a;
+}
+#form-cotacao {
+    background: #fff;
+    position: relative;
+    opacity: 1;
+    margin-top: 5px;
+}
+#form-cotacao .btn-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+}
+#form-cotacao .form-control,
+#form-cotacao .form-select,
+#orcamento-form .form-control,
+#orcamento-form .form-select {
+    border-radius: 8px;
+    border: 1px solid #1eb70a;
+    background: #f8fff8;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    margin-right: 0;
+}
+#form-cotacao .form-control:focus,
+#form-cotacao .form-select:focus,
+#orcamento-form .form-control:focus,
+#orcamento-form .form-select:focus {
+    border-color: #0a7d13;
+    box-shadow: 0 0 0 2px #b6f5b6;
+}
+#form-cotacao label,
+#orcamento-form label {
+    color: #1eb70a;
+    font-weight: 500;
+}
+#form-cotacao button[type="submit"],
+#orcamento-form button[type="submit"] {
+    width: 100%;
+    margin-top: 12px;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+#form-cotacao .mb-2,
+#orcamento-form .mb-3 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+#orcamento-form select.form-select,
+#form-cotacao select.form-select,
+#form-mercado select.form-select,
+#form-fotovoltaico select.form-select,
+#form-baterias select.form-select,
+#simulador-independente-form select.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8l5 5 5-5' stroke='%23000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+    padding-right: 2.5em;
+    cursor: pointer;
+    color: #000;
+    
+}
+#orcamento-form {
+    max-width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
+}   
+/* =================== FAQ =================== */
+#faqs .faq-card {
+    width: 100%;
+    max-width: 600px;
+    min-width: 340px;
+    border: 2px solid #1eb70a;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.10);
+    border-radius: 12px;
+    background: #e6ffe6;
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    margin-bottom: 0;
+    padding: 24px 18px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: #09205a;
+}
+#faqs .faq-card .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #1eb70a;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+#faqs .faq-card ul {
+    font-size: 1.08rem;
+    color: #09205a;
+    line-height: 1.6;
+    padding-left: 18px;
+    margin-bottom: 0;
+    font-family: 'Raleway', sans-serif;
+}
+#faqs .faq-card ul li {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    color: #000000;
+}
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-height: 48px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+.faq-question strong {
+    flex: 1 1 auto;
+    color: #09205a;
+    font-family: 'Raleway', sans-serif;
+}
+.faq-toggle {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0;
+    margin-left: 12px;
+    cursor: pointer;
+}
+#faqs .faq-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+/* =================== BOTÕES =================== */
+.btn-detalhes {
+    width: 220px;
+    margin: 0 auto 16px auto;
+    align-self: center;
+    display: block;
+    color: #fff;
+    background-color: #1eb70a;
+}
+@media (max-width: 991px) {
+    .btn-detalhes {
+        width: 100%;
+        margin: 0 0 16px 0;
+    }
+}
+
+/* =================== OUTROS AJUSTES =================== */
+.col-lg-6 > .carousel,
+.col-lg-6 > .carousel.slide {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+.home-container .row.align-items-center {
+    align-items: flex-start !important;
+}
+.home-container .col-lg-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+.home-container .col-lg-6 > h1,
+.home-container .col-lg-6 > .mb-3,
+.home-container .col-lg-6 > .row.g-3 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+.home-container h1.mb-3 {
+    margin-top: 0 !important;
+    margin-bottom: 1rem;
+}
+#home .col-lg-6 > .btn-success {
+    width: 88%;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+}
+
+/* Diminui o espaço entre o conteúdo das seções e o footer */
+.content-section,
+#orcamento,
+#faqs,
+.servico-card-container,
+.home-container {
+    margin-bottom: 0px !important;
+}
+
+/* Espaçamento padronizado entre navbar e containers das seções principais */
+#faqs.content-section,
+#sobre-nos.content-section,
+#sac.content-section {
+    margin-top: 0 !important;
+}
+.sac-mural-container {
+    background: #e6ffe6;
+    border: 2px solid #1eb70a;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.10);
+    padding: 24px 24px 18px 24px;
+    margin: 0 auto 18px auto;
+    width: 100%;
+}
+
+#form-sugestao .form-control,
+#form-sugestao textarea {
+    background: #f8fff8;
+    border: 1px solid #1eb70a;
+    border-radius: 8px;
+    color: #09205a;
+}
+
+#form-sugestao label {
+    color: #1eb70a;
+    font-weight: 500;
+}
+
+#form-sugestao button[type="submit"] {
+    width: 100%;
+    margin-top: 12px;
+}
+
+#form-sugestao .mb-2 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#sac #mural-sugestoes {
+    margin-top: 18px;
+}
+
+#sac #mural-sugestoes > div {
+    background: #fff;
+    border: 1px solid #b6f5b6;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 14px 12px;
+    color: #09205a;
+    box-shadow: 0 2px 8px rgba(34,197,94,0.07);
+}
+#sac #mural-sugestoes .alert {
+    margin-bottom: 12px;
+}
+
+#orcamento-form .form-label,
+#form-sugestao .form-label,
+#form-cotacao .form-label {
+    color: #09205a !important;
+    font-weight: 500;
+}
+
+.aviso-servico {
+    font-size: 0.98rem;
+    color: #888 !important;
+    margin-top: 12px;
+    margin-bottom: 0;
+    font-style: italic;
+}
